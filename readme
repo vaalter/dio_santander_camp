@@ -1,0 +1,46 @@
+Raciocínio por Trás do Código:
+- main() function: Encapsulamos todo o código principal dentro de uma função main(). Isso é uma boa prática para organizar o código.
+
+- Variáveis Iniciais:
+  - saldo: Armazena o valor atual disponível na conta. Começamos com 0.
+  - limite: Define o valor máximo que pode ser sacado em uma única operação. No nosso caso, R$ 500.
+  - extrato: Uma string que vai armazenar o histórico de todas as transações.
+  - numero_saques: Conta quantos saques foram realizados.
+  - LIMITE_SAQUES: Uma constante que define o número máximo de saques permitidos por dia (aqui, 3). Usamos letras maiúsculas para indicar que é uma constante.
+
+- Loop while True: Este loop faz com que o menu seja exibido repetidamente até que o usuário escolha a opção de sair (q).
+- Menu de Opções: O menu é uma string formatada para ser fácil de ler.
+  - input(menu): Solicita ao usuário que digite a opção desejada.
+- Estrutura if/elif/else: Verifica a opção escolhida pelo usuário e executa o bloco de código correspondente.
+
+Detalhes das Operações:
+- Depósito (d):
+    - Pede o valor do depósito.
+    - Verifica se o valor é positivo. Se for, adiciona ao saldo e registra no extrato.
+
+- Saque (s):
+  - Pede o valor do saque.
+  - Validações importantes:
+      - excedeu_saldo: Checa se o valor do saque é maior que o saldo disponível.
+      - excedeu_limite: Checa se o valor do saque é maior que o limite por operação.
+      - excedeu_saques: Checa se o número de saques diários já atingiu o LIMITE_SAQUES.
+* Se todas as validações passarem e o valor for positivo, o saque é realizado, o saldo é atualizado, a transação é adicionada ao extrato e o numero_saques é incrementado.
+
+Extrato (e):
+  - Imprime um cabeçalho.
+  - Verifica se o extrato está vazio. Se estiver, informa que não houve movimentações. Caso contrário, imprime o conteúdo do extrato.
+  - Por fim, imprime o saldo atual.
+
+- Sair (q):
+  - Imprime uma mensagem de despedida e usa break para sair do loop while, encerrando o programa.
+- Opção Inválida: Se o usuário digitar algo diferente das opções válidas, uma mensagem de erro é exibida.
+
+Como Implementar o Código:
+Copie o Código: Copie todo o código acima.
+
+1. Crie um Arquivo Python: Abra um editor de texto (como Notepad, VS Code, Sublime Text, ou qualquer IDE de Python como PyCharm) e cole o código em um novo arquivo.
+2. Salve o Arquivo: Salve o arquivo com a extensão .py (por exemplo, sistema_bancario.py).
+3. Execute o Código:
+  3.1. Abra o Terminal ou Prompt de Comando no seu computador.
+  3.2. Navegue até a pasta onde você salvou o arquivo usando o comando cd <caminho_da_pasta>.
+  3.3. Execute o programa digitando python sistema_bancario.py e pressione Enter.
